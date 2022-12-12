@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "@types/node": "^14.11.2",
+    "concurrently": "^7.6.0",
+    "gts": "^3.1.1",
+    "nodemon": "^2.0.20",
+    "typescript": "~4.7.0"
+  },
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3"
+  },
+  "scripts": {
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm.cmd run compile",
+    "pretest": "npm.cmd run compile",
+    "posttest": "npm.cmd run lint",
+    "dev": "concurrently --kill-others \"npx tsc -w\" \"npx nodemon build\""
+  }
+}
